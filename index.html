@@ -1,0 +1,2620 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Kring (กริ๊ง) · See Thailand With a Local · Bangkok &amp; Pattaya</title>
+  <meta name="description" content="Kring (กริ๊ง) — Verified local experiences, the two-phone Kring! bump at public venues, and Kring Price street-price intelligence across Bangkok &amp; Pattaya, Thailand." />
+  <meta property="og:title" content="Kring (กริ๊ง) · See Thailand With a Local" />
+  <meta property="og:description" content="Curated local insiders, instant two-phone bump verification at public venues, and Kring Price street intelligence. Launching soon in Bangkok &amp; Pattaya." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kringapp.com" />
+  <meta name="theme-color" content="#060714" />
+  <link rel="icon" type="image/svg+xml" href="/kring-icon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Noto+Sans+Thai:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Unbounded:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: 'Unbounded';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url('/fonts/unbounded-latin-700-normal.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Unbounded';
+      font-style: normal;
+      font-weight: 800;
+      font-display: swap;
+      src: url('/fonts/unbounded-latin-800-normal.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url('/fonts/plus-jakarta-sans-latin-500-normal.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url('/fonts/plus-jakarta-sans-latin-700-normal.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Noto Sans Thai';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url('/fonts/noto-sans-thai-thai-600-normal.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Noto Sans Thai';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url('/fonts/noto-sans-thai-thai-700-normal.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'JetBrains Mono';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url('/fonts/jetbrains-mono-latin-500-normal.woff2') format('woff2');
+    }
+
+    :root {
+      --bg-void: #060714;
+      --bg-deep: #0B0D22;
+      --bg-card: rgba(14, 17, 42, 0.68);
+      --bg-card-hi: rgba(20, 24, 58, 0.82);
+      --anchan: #7381FF;
+      --anchan-deep: #3446FF;
+      --anchan-hi: #B9C1FF;
+      --marigold: #FFB21E;
+      --marigold-hi: #FFD067;
+      --marigold-soft: #FFF0B8;
+      --violet-lens: #9B5CFF;
+      --violet-hi: #D6BAFF;
+      --mint-ok: #2EE59D;
+      --ink-100: #F6F7FF;
+      --ink-80: rgba(246, 247, 255, 0.82);
+      --ink-60: rgba(210, 216, 255, 0.64);
+      --ink-40: rgba(180, 190, 245, 0.44);
+      --line-subtle: rgba(135, 150, 255, 0.16);
+      --line-bright: rgba(155, 92, 255, 0.42);
+      --font-display: 'Unbounded', 'Noto Sans Thai', sans-serif;
+      --font-sans: 'Plus Jakarta Sans', 'Noto Sans Thai', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-spring: cubic-bezier(0.22, 1.35, 0.36, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-void);
+      color: var(--ink-100);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 18% 16%, rgba(52, 70, 255, 0.28) 0%, transparent 46%),
+        radial-gradient(circle at 82% 20%, rgba(255, 178, 30, 0.20) 0%, transparent 44%),
+        radial-gradient(circle at 50% 48%, rgba(155, 92, 255, 0.18) 0%, transparent 52%),
+        linear-gradient(180deg, #060714 0%, #0B0D22 52%, #060714 100%);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient 3D Perspective Grid & Volumetric Atmosphere */
+    .stage-atmosphere {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .stage-grid {
+      position: absolute;
+      inset: -30% -20% 0 -20%;
+      background-image:
+        linear-gradient(to right, rgba(115, 129, 255, 0.07) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(115, 129, 255, 0.07) 1px, transparent 1px);
+      background-size: 64px 64px;
+      transform: perspective(900px) rotateX(62deg) translateY(180px) translateZ(-120px);
+      mask-image: radial-gradient(ellipse 70% 55% at 50% 65%, rgba(0,0,0,0.85) 10%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 55% at 50% 65%, rgba(0,0,0,0.85) 10%, transparent 80%);
+      animation: gridDrift 24s linear infinite;
+    }
+
+    @keyframes gridDrift {
+      0% { background-position: 0 0; }
+      100% { background-position: 0 64px; }
+    }
+
+    .stage-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(88px);
+      opacity: 0.55;
+      mix-blend-mode: screen;
+      transition: transform 0.6s var(--ease-out);
+    }
+    .stage-orb.orb-anchan {
+      width: 540px;
+      height: 540px;
+      left: -120px;
+      top: 40px;
+      background: radial-gradient(circle, rgba(115, 129, 255, 0.55), rgba(52, 70, 255, 0) 70%);
+    }
+    .stage-orb.orb-marigold {
+      width: 500px;
+      height: 500px;
+      right: -110px;
+      top: 120px;
+      background: radial-gradient(circle, rgba(255, 178, 30, 0.46), rgba(255, 178, 30, 0) 70%);
+    }
+    .stage-orb.orb-violet {
+      width: 460px;
+      height: 460px;
+      left: 36%;
+      top: 22%;
+      background: radial-gradient(circle, rgba(155, 92, 255, 0.42), rgba(155, 92, 255, 0) 72%);
+    }
+
+    /* Subtle noise grain */
+    .stage-grain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* Bilingual visibility helper */
+    html[data-lang="en"] [data-i18n-th] { display: none !important; }
+    html[data-lang="th"] [data-i18n-en] { display: none !important; }
+
+    /* Layout Container */
+    .site-wrap {
+      position: relative;
+      z-index: 2;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Top Floating Glass Island Navigation */
+    .top-nav-wrap {
+      position: sticky;
+      top: 16px;
+      z-index: 50;
+      padding-top: 16px;
+    }
+
+    .top-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: rgba(10, 12, 30, 0.76);
+      backdrop-filter: blur(22px) saturate(160%);
+      -webkit-backdrop-filter: blur(22px) saturate(160%);
+      border: 1px solid rgba(135, 150, 255, 0.22);
+      box-shadow:
+        0 18px 48px rgba(3, 4, 14, 0.65),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    }
+
+    /* Official Kring Wordmark ("krıng" with Twin-Ring dot) */
+    .brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--ink-100);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .kr-wm {
+      display: inline-flex;
+      align-items: baseline;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 26px;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--ink-100);
+    }
+
+    .kr-wm-i {
+      position: relative;
+      display: inline-block;
+      margin: 0 1px;
+    }
+
+    .kr-wm-dot {
+      position: absolute;
+      left: 50%;
+      top: -0.28em;
+      transform: translateX(-50%);
+      width: 0.92em;
+      height: auto;
+      overflow: visible;
+      filter: drop-shadow(0 0 8px rgba(155, 92, 255, 0.7));
+      transition: transform 0.35s var(--ease-spring);
+    }
+
+    .brand-lockup:hover .kr-wm-dot {
+      transform: translateX(-50%) scale(1.16);
+    }
+
+    .brand-th-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(115, 129, 255, 0.12);
+      border: 1px solid rgba(115, 129, 255, 0.26);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--anchan-hi);
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-link {
+      color: var(--ink-80);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+    .nav-link:hover {
+      color: var(--marigold-hi);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Language Toggle Pill */
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(135, 150, 255, 0.24);
+      border-radius: 999px;
+      padding: 3px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: var(--ink-60);
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.22s var(--ease-out);
+    }
+
+    .lang-btn.is-active {
+      background: linear-gradient(135deg, var(--anchan-deep), var(--violet-lens));
+      color: #fff;
+      box-shadow: 0 2px 12px rgba(115, 129, 255, 0.45);
+    }
+
+    .btn-partner-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 178, 30, 0.48);
+      background: linear-gradient(135deg, rgba(255, 178, 30, 0.22), rgba(155, 92, 255, 0.22));
+      color: var(--marigold-soft);
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s var(--ease-out);
+      box-shadow: 0 4px 20px rgba(255, 178, 30, 0.16);
+    }
+    .btn-partner-nav:hover {
+      transform: translateY(-1px);
+      background: linear-gradient(135deg, rgba(255, 178, 30, 0.34), rgba(155, 92, 255, 0.32));
+      box-shadow: 0 8px 26px rgba(255, 178, 30, 0.28);
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      padding: 56px 0 72px;
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+    }
+
+    /* Status Hype Pill */
+    .hype-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 16px;
+      border-radius: 999px;
+      background: rgba(18, 22, 54, 0.82);
+      border: 1px solid rgba(155, 92, 255, 0.42);
+      box-shadow: 0 0 28px rgba(155, 92, 255, 0.22);
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--ink-100);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--mint-ok);
+      box-shadow: 0 0 12px var(--mint-ok);
+      animation: livePulse 2s infinite;
+    }
+
+    @keyframes livePulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.38); opacity: 0.55; }
+    }
+
+    /* Interactive Centerpiece Twin-Ring Stage */
+    .bump-stage-card {
+      position: relative;
+      width: 100%;
+      max-width: 540px;
+      border-radius: 28px;
+      padding: 20px 24px 18px;
+      background: linear-gradient(160deg, rgba(16, 20, 50, 0.85) 0%, rgba(9, 11, 28, 0.92) 100%);
+      border: 1px solid rgba(135, 150, 255, 0.26);
+      box-shadow:
+        0 24px 60px rgba(4, 5, 18, 0.72),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      cursor: pointer;
+      user-select: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .bump-stage-card:hover {
+      border-color: rgba(155, 92, 255, 0.58);
+      box-shadow:
+        0 28px 70px rgba(52, 70, 255, 0.26),
+        0 0 40px rgba(155, 92, 255, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    }
+
+    .bump-canvas-wrap {
+      position: relative;
+      width: 340px;
+      height: 176px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #kringLiquidCanvas {
+      position: absolute;
+      inset: -36px -40px;
+      width: calc(100% + 80px);
+      height: calc(100% + 72px);
+      pointer-events: none;
+    }
+
+    /* Pop-up กริ๊ง! word & waveform on contact */
+    .bump-pop-word {
+      position: absolute;
+      bottom: 6px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.86);
+      font-family: var(--font-display);
+      font-size: 21px;
+      font-weight: 800;
+      background: linear-gradient(90deg, var(--anchan-hi), #fff 48%, var(--marigold-hi));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 24px rgba(155, 92, 255, 0.65);
+      opacity: 0;
+      transition: all 0.28s var(--ease-spring);
+      pointer-events: none;
+    }
+    .bump-stage-card.is-bumped .bump-pop-word {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
+
+    .bump-footer-bar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 8px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(135, 150, 255, 0.14);
+    }
+
+    .kr-wave {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      height: 18px;
+    }
+    .kr-wave i {
+      display: block;
+      width: 3px;
+      height: var(--h, 8px);
+      border-radius: 99px;
+      background: var(--anchan);
+      opacity: 0.45;
+      transform: scaleY(0.45);
+      transition: transform 0.25s var(--ease-spring), opacity 0.25s ease;
+    }
+    .kr-wave i:nth-child(n+8) {
+      background: var(--marigold);
+    }
+    .bump-stage-card.is-ringing .kr-wave i {
+      animation: waveBar 0.62s var(--ease-spring) calc(var(--i) * 24ms) 1;
+    }
+    @keyframes waveBar {
+      0% { transform: scaleY(0.35); opacity: 0.4; }
+      45% { transform: scaleY(1.35); opacity: 1; }
+      100% { transform: scaleY(0.65); opacity: 0.75; }
+    }
+
+    .btn-tap-kring {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(115, 129, 255, 0.24), rgba(255, 178, 30, 0.24));
+      border: 1px solid rgba(255, 208, 103, 0.45);
+      color: var(--ink-100);
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s var(--ease-out);
+    }
+    .btn-tap-kring:hover {
+      transform: scale(1.04);
+      box-shadow: 0 0 20px rgba(255, 178, 30, 0.35);
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(34px, 4.4vw, 56px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--ink-100);
+    }
+
+    .hero-title .grad-anchan {
+      background: linear-gradient(135deg, #B9C1FF 0%, #7381FF 45%, #9B5CFF 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-title .grad-marigold {
+      background: linear-gradient(135deg, #FFF0B8 0%, #FFD067 45%, #FFB21E 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub {
+      font-size: clamp(16px, 1.35vw, 19px);
+      line-height: 1.6;
+      color: var(--ink-80);
+      max-width: 580px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      margin-top: 4px;
+    }
+
+    .btn-primary-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 28px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 240, 184, 0.55);
+      background: linear-gradient(135deg, #FFB21E 0%, #FF930F 55%, #FFB21E 100%);
+      color: #090A1A;
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow:
+        0 14px 36px rgba(255, 178, 30, 0.36),
+        inset 0 1px 0 rgba(255, 255, 255, 0.65);
+      transition: all 0.25s var(--ease-out);
+    }
+    .btn-primary-gold:hover {
+      transform: translateY(-2px) scale(1.01);
+      box-shadow:
+        0 18px 44px rgba(255, 178, 30, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    .btn-secondary-glass {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 24px;
+      border-radius: 999px;
+      border: 1px solid rgba(135, 150, 255, 0.34);
+      background: rgba(16, 20, 48, 0.72);
+      color: var(--ink-100);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s var(--ease-out);
+    }
+    .btn-secondary-glass:hover {
+      border-color: var(--anchan);
+      background: rgba(52, 70, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .hero-city-strip {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px;
+      padding-top: 8px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--ink-60);
+    }
+    .hero-city-strip span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* 3D INTERACTIVE DARK-TITANIUM PHONE STAGE */
+    .hero-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1400px;
+    }
+
+    .phone-3d-rig {
+      position: relative;
+      width: 356px;
+      border-radius: 50px;
+      padding: 12px;
+      background: linear-gradient(145deg, #2A2E52 0%, #10132B 42%, #1E1B3A 100%);
+      border: 1.5px solid rgba(185, 193, 255, 0.32);
+      box-shadow:
+        0 38px 90px rgba(2, 3, 12, 0.85),
+        0 0 60px rgba(115, 129, 255, 0.22),
+        inset 0 1px 2px rgba(255, 255, 255, 0.35);
+      transform: rotateX(var(--rx, 4deg)) rotateY(var(--ry, -8deg));
+      transform-style: preserve-3d;
+      transition: transform 0.18s ease-out;
+    }
+
+    /* Specular Foil Sheen on Phone & Cards */
+    .foil-sheen {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      background: radial-gradient(
+        420px circle at var(--mx, 50%) var(--my, 30%),
+        rgba(255, 255, 255, 0.14),
+        rgba(155, 92, 255, 0.08) 38%,
+        transparent 70%
+      );
+      z-index: 6;
+    }
+
+    .phone-screen {
+      position: relative;
+      background: #080A1C;
+      border-radius: 40px;
+      overflow: hidden;
+      padding: 16px 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .phone-island {
+      width: 108px;
+      height: 24px;
+      border-radius: 999px;
+      background: #02030A;
+      margin: 0 auto 2px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      border: 1px solid rgba(115, 129, 255, 0.22);
+    }
+    .phone-island-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--violet-lens);
+      box-shadow: 0 0 8px var(--violet-lens);
+    }
+
+    .phone-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .phone-city-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: rgba(115, 129, 255, 0.14);
+      border: 1px solid rgba(115, 129, 255, 0.3);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--anchan-hi);
+    }
+
+    .phone-verified-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(46, 229, 157, 0.12);
+      border: 1px solid rgba(46, 229, 157, 0.34);
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--mint-ok);
+    }
+
+    /* Phone Featured Experience Card */
+    .phone-exp-card {
+      position: relative;
+      height: 204px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+    }
+
+    .phone-exp-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.03);
+      transition: transform 0.6s var(--ease-out);
+    }
+    .phone-3d-rig:hover .phone-exp-card img {
+      transform: scale(1.08);
+    }
+
+    .phone-exp-shade {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(6, 7, 20, 0.15) 0%, rgba(6, 7, 20, 0.88) 88%);
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .phone-exp-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .phone-tag-public {
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(8, 10, 28, 0.78);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 208, 103, 0.4);
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--marigold-hi);
+    }
+
+    .phone-exp-bottom h4 {
+      font-family: var(--font-display);
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .phone-exp-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11.5px;
+      color: var(--ink-80);
+    }
+
+    .phone-price-badge {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--marigold-hi);
+      background: rgba(255, 178, 30, 0.16);
+      padding: 3px 8px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 178, 30, 0.35);
+    }
+
+    /* Phone Live Two-Phone Bump Banner */
+    .phone-bump-box {
+      padding: 12px 14px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(52, 70, 255, 0.22), rgba(155, 92, 255, 0.22), rgba(255, 178, 30, 0.18));
+      border: 1px solid rgba(155, 92, 255, 0.44);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      transition: transform 0.28s var(--ease-spring), box-shadow 0.28s ease;
+    }
+    .phone-bump-box.is-flash {
+      transform: scale(1.03);
+      box-shadow: 0 0 28px rgba(155, 92, 255, 0.55);
+    }
+
+    .phone-bump-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .phone-bump-title {
+      font-size: 12px;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .phone-bump-desc {
+      font-size: 10.5px;
+      color: var(--ink-80);
+    }
+
+    /* Phone Kring Price Mini Row */
+    .phone-kprice-row {
+      padding: 10px 12px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(135, 150, 255, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+    }
+    .phone-kprice-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--ink-80);
+      font-weight: 600;
+    }
+    .phone-kprice-val {
+      font-family: var(--font-mono);
+      color: var(--mint-ok);
+      font-weight: 700;
+    }
+
+    /* Floating Orbit Badges around Phone */
+    .floating-chip {
+      position: absolute;
+      z-index: 8;
+      padding: 9px 14px;
+      border-radius: 16px;
+      background: rgba(12, 15, 38, 0.88);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(155, 92, 255, 0.42);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--ink-100);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transform: translateZ(36px);
+      animation: floatChip 5.5s ease-in-out infinite;
+    }
+    .floating-chip.chip-top-left {
+      top: 34px;
+      left: -38px;
+    }
+    .floating-chip.chip-bottom-right {
+      bottom: 48px;
+      right: -34px;
+      border-color: rgba(255, 178, 30, 0.48);
+      animation-delay: -2.6s;
+    }
+    @keyframes floatChip {
+      0%, 100% { transform: translateZ(36px) translateY(0px); }
+      50% { transform: translateZ(36px) translateY(-7px); }
+    }
+
+    /* SECTION HEADERS */
+    .section-block {
+      padding: 72px 0;
+      position: relative;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .eyebrow-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(115, 129, 255, 0.12);
+      border: 1px solid rgba(115, 129, 255, 0.3);
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--anchan-hi);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3.2vw, 40px);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+    }
+
+    .section-desc {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--ink-60);
+    }
+
+    /* 3 TEASER BENTO CARDS WITH 3D TILT & SPECULAR FOIL */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      perspective: 1200px;
+    }
+
+    .bento-card {
+      position: relative;
+      border-radius: 28px;
+      padding: 28px 26px;
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--line-subtle);
+      box-shadow:
+        0 20px 50px rgba(3, 4, 15, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 22px;
+      overflow: hidden;
+      transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+      transition: transform 0.18s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .bento-card:hover {
+      border-color: rgba(155, 92, 255, 0.5);
+      box-shadow:
+        0 26px 64px rgba(5, 7, 24, 0.78),
+        0 0 36px rgba(115, 129, 255, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    }
+
+    .bento-visual {
+      position: relative;
+      height: 168px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #080A1E;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bento-photo-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      width: 100%;
+      height: 100%;
+      padding: 6px;
+    }
+    .bento-photo-strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+
+    .bento-overlay-pill {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      padding: 7px 12px;
+      border-radius: 12px;
+      background: rgba(8, 10, 26, 0.86);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(135, 150, 255, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11.5px;
+      font-weight: 700;
+    }
+
+    /* Bento 2: Animated Two-Ring Bump Graphic */
+    .bento-bump-stage {
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(155, 92, 255, 0.28), transparent 68%),
+        linear-gradient(135deg, rgba(52, 70, 255, 0.18), rgba(255, 178, 30, 0.16));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .bento-rings-svg {
+      width: 152px;
+      height: auto;
+      filter: drop-shadow(0 0 18px rgba(155, 92, 255, 0.55));
+    }
+    .bento-rings-svg .ring-left {
+      animation: bentoSlideLeft 3.4s var(--ease-spring) infinite;
+    }
+    .bento-rings-svg .ring-right {
+      animation: bentoSlideRight 3.4s var(--ease-spring) infinite;
+    }
+    .bento-rings-svg .ring-lens {
+      animation: bentoLensPulse 3.4s ease-in-out infinite;
+    }
+    @keyframes bentoSlideLeft {
+      0%, 100% { transform: translateX(0); }
+      15% { transform: translateX(-16px); }
+      32% { transform: translateX(2px); }
+      45% { transform: translateX(0); }
+    }
+    @keyframes bentoSlideRight {
+      0%, 100% { transform: translateX(0); }
+      15% { transform: translateX(16px); }
+      32% { transform: translateX(-2px); }
+      45% { transform: translateX(0); }
+    }
+    @keyframes bentoLensPulse {
+      0%, 100% { opacity: 0.92; }
+      15% { opacity: 0; }
+      32% { opacity: 1; }
+    }
+
+    /* Bento 3: Kring Price Ticker Graphic */
+    .bento-price-board {
+      width: 100%;
+      height: 100%;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(255, 178, 30, 0.2), transparent 60%),
+        #080A1E;
+    }
+    .price-ticker-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(135, 150, 255, 0.16);
+      font-size: 12px;
+    }
+    .price-ticker-item strong {
+      font-family: var(--font-mono);
+      color: var(--marigold-hi);
+    }
+
+    .bento-body {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .bento-kicker {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--marigold-hi);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .bento-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--ink-100);
+    }
+
+    .bento-text {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--ink-60);
+    }
+
+    /* PARTNER & FOUNDING AGENCY PREVIEW SECTION */
+    .partner-section {
+      padding: 72px 0 88px;
+    }
+
+    .partner-shell {
+      border-radius: 36px;
+      padding: 48px;
+      background:
+        radial-gradient(circle at 12% 15%, rgba(52, 70, 255, 0.24), transparent 48%),
+        radial-gradient(circle at 88% 85%, rgba(255, 178, 30, 0.2), transparent 48%),
+        rgba(12, 15, 38, 0.84);
+      border: 1px solid rgba(155, 92, 255, 0.34);
+      box-shadow:
+        0 32px 80px rgba(2, 3, 12, 0.78),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14);
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 44px;
+      align-items: start;
+    }
+
+    .partner-left {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .partner-cards-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .partner-lane-card {
+      padding: 22px 24px;
+      border-radius: 22px;
+      background: rgba(18, 22, 54, 0.72);
+      border: 1px solid rgba(135, 150, 255, 0.22);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: border-color 0.25s ease, transform 0.25s var(--ease-out);
+    }
+    .partner-lane-card:hover {
+      border-color: var(--marigold);
+      transform: translateX(4px);
+    }
+
+    .lane-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .lane-badge {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(115, 129, 255, 0.16);
+      color: var(--anchan-hi);
+      border: 1px solid rgba(115, 129, 255, 0.32);
+    }
+    .lane-badge.is-gold {
+      background: rgba(255, 178, 30, 0.15);
+      color: var(--marigold-hi);
+      border-color: rgba(255, 178, 30, 0.38);
+    }
+
+    .lane-email {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--marigold-hi);
+      text-decoration: none;
+    }
+    .lane-email:hover {
+      text-decoration: underline;
+    }
+
+    .lane-title {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink-100);
+    }
+
+    .lane-desc {
+      font-size: 13.8px;
+      line-height: 1.55;
+      color: var(--ink-60);
+    }
+
+    /* Interactive Partner Access Form Card */
+    .partner-form-card {
+      padding: 32px 30px;
+      border-radius: 28px;
+      background: rgba(8, 10, 26, 0.9);
+      border: 1px solid rgba(155, 92, 255, 0.4);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .form-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ink-100);
+    }
+
+    .form-sub {
+      font-size: 13.5px;
+      color: var(--ink-60);
+      line-height: 1.5;
+    }
+
+    .cat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .cat-chip {
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(135, 150, 255, 0.22);
+      background: rgba(18, 22, 54, 0.65);
+      color: var(--ink-80);
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 700;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .cat-chip:hover {
+      border-color: rgba(115, 129, 255, 0.5);
+    }
+    .cat-chip.is-selected {
+      background: linear-gradient(135deg, rgba(52, 70, 255, 0.36), rgba(155, 92, 255, 0.36));
+      border-color: var(--marigold);
+      color: #fff;
+      box-shadow: 0 0 18px rgba(155, 92, 255, 0.32);
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .field-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink-80);
+    }
+
+    .field-input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(135, 150, 255, 0.25);
+      background: rgba(14, 18, 44, 0.85);
+      color: var(--ink-100);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .field-input:focus {
+      border-color: var(--anchan);
+      box-shadow: 0 0 0 3px rgba(115, 129, 255, 0.2);
+    }
+
+    .btn-submit-invite {
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 240, 184, 0.5);
+      background: linear-gradient(135deg, #FFB21E 0%, #FF930F 100%);
+      color: #08091A;
+      font-family: var(--font-display);
+      font-size: 13.5px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.22s var(--ease-out);
+      box-shadow: 0 10px 28px rgba(255, 178, 30, 0.32);
+    }
+    .btn-submit-invite:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 34px rgba(255, 178, 30, 0.45);
+    }
+
+    /* Futuristic Confirmation Pass State */
+    .invite-confirmation {
+      display: none;
+      flex-direction: column;
+      gap: 14px;
+      padding: 20px;
+      border-radius: 20px;
+      background: linear-gradient(145deg, rgba(46, 229, 157, 0.14), rgba(52, 70, 255, 0.2));
+      border: 1px solid rgba(46, 229, 157, 0.45);
+      animation: fadePop 0.35s var(--ease-spring);
+    }
+    .invite-confirmation.is-visible {
+      display: flex;
+    }
+    @keyframes fadePop {
+      0% { opacity: 0; transform: scale(0.94); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .pass-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--mint-ok);
+      font-weight: 700;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      padding: 40px 0 56px;
+      border-top: 1px solid rgba(135, 150, 255, 0.16);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 13px;
+      color: var(--ink-60);
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .footer-emails {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px;
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+    }
+    .footer-emails a {
+      color: var(--ink-80);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .footer-emails a:hover {
+      color: var(--marigold-hi);
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 1024px) {
+      .hero-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+      }
+      .hero-left {
+        align-items: center;
+      }
+      .bento-grid {
+        grid-template-columns: 1fr;
+      }
+      .partner-shell {
+        grid-template-columns: 1fr;
+        padding: 32px 24px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .site-wrap {
+        padding: 0 16px;
+      }
+      .top-nav {
+        padding: 10px 14px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .brand-th-pill {
+        display: none;
+      }
+      .btn-partner-nav {
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+      .bump-canvas-wrap {
+        width: 280px;
+        height: 150px;
+      }
+      .phone-3d-rig {
+        width: 316px;
+      }
+      .floating-chip.chip-top-left {
+        left: -8px;
+        top: 18px;
+      }
+      .floating-chip.chip-bottom-right {
+        right: -8px;
+        bottom: 24px;
+      }
+      .cat-grid {
+        grid-template-columns: 1fr;
+      }
+      .site-footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Volumetric Night Atmosphere -->
+  <div class="stage-atmosphere" aria-hidden="true">
+    <div class="stage-orb orb-anchan"></div>
+    <div class="stage-orb orb-marigold"></div>
+    <div class="stage-orb orb-violet"></div>
+    <div class="stage-grid"></div>
+  </div>
+  <div class="stage-grain" aria-hidden="true"></div>
+
+  <div class="site-wrap">
+    <!-- TOP FLOATING NAVIGATION -->
+    <header class="top-nav-wrap">
+      <nav class="top-nav" aria-label="Primary Navigation">
+        <a href="#top" class="brand-lockup" id="navBrandBump">
+          <span class="kr-wm" role="img" aria-label="Kring">
+            <span>kr</span>
+            <span class="kr-wm-i">
+              ı
+              <svg class="kr-wm-dot" viewBox="0 0 34 20" width="28" height="16" aria-hidden="true">
+                <path d="M17 4.4A7.5 7.5 0 0 1 17 15.6A7.5 7.5 0 0 1 17 4.4Z" fill="#9B5CFF" opacity="0.95" />
+                <circle cx="11" cy="10" r="7.5" fill="none" stroke="#7381FF" stroke-width="3.2" />
+                <circle cx="23" cy="10" r="7.5" fill="none" stroke="#FFB21E" stroke-width="3.2" />
+              </svg>
+            </span>
+            <span>ng</span>
+          </span>
+          <span class="brand-th-pill" lang="th">กริ๊ง · ไทย</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#vision" class="nav-link">
+            <span data-i18n-en>The Experience</span>
+            <span data-i18n-th lang="th">ประสบการณ์กริ๊ง</span>
+          </a>
+          <a href="#vision" class="nav-link">
+            <span data-i18n-en>Two-Phone Bump</span>
+            <span data-i18n-th lang="th">แตะกริ๊ง!</span>
+          </a>
+          <a href="#partners" class="nav-link">
+            <span data-i18n-en>Founding Partners</span>
+            <span data-i18n-th lang="th">พาร์ทเนอร์และเอเจนซี่</span>
+          </a>
+        </div>
+
+        <div class="nav-actions">
+          <div class="lang-switch" role="group" aria-label="Language Switcher">
+            <button type="button" class="lang-btn is-active" data-set-lang="en" id="btnLangEn">EN</button>
+            <button type="button" class="lang-btn" data-set-lang="th" id="btnLangTh">ไทย</button>
+          </div>
+          <a href="#partners" class="btn-partner-nav" id="navPartnerCta">
+            <span data-i18n-en>Partner Access</span>
+            <span data-i18n-th lang="th">พาร์ทเนอร์</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <main id="top">
+      <section class="hero-section">
+        <div class="hero-left">
+          <div class="hype-badge">
+            <span class="pulse-dot"></span>
+            <span data-i18n-en>PRIVATE BETA · BANGKOK &amp; PATTAYA · COMING SOON</span>
+            <span data-i18n-th lang="th">ไพรเวทเบต้า · กรุงเทพฯ และพัทยา · เร็วๆ นี้</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span data-i18n-en>
+              See Thailand with a <span class="grad-anchan">verified local.</span><br />
+              Meet with a <span class="grad-marigold">กริ๊ง!</span>
+            </span>
+            <span data-i18n-th lang="th">
+              เที่ยวไทยกับ <span class="grad-anchan">โลคอลตัวจริง</span><br />
+              เจอกันเมื่อแตะ <span class="grad-marigold">กริ๊ง!</span>
+            </span>
+          </h1>
+
+          <p class="hero-sub">
+            <span data-i18n-en>
+              Curated street-food walks, temple mornings, sunset rooftops, and creative culture across Bangkok &amp; Pattaya — paired with two-phone bump escrow at 100% public venues and real-time <strong>Kring Price</strong> street intelligence.
+            </span>
+            <span data-i18n-th lang="th">
+              เปิดประสบการณ์เดินชิมสตรีทฟู้ด ไหว้พระยามเช้า รูฟท็อปชมวิว และคาเฟ่ไลฟ์สไตล์ทั่วกรุงเทพฯ และพัทยา มั่นใจด้วยการแตะโทรศัพท์ <strong>กริ๊ง!</strong> ณ สถานที่สาธารณะ พร้อมเช็ก <strong>ราคากริ๊ง</strong> เรียลไทม์
+            </span>
+          </p>
+
+          <!-- Interactive Twin-Ring Liquid Light Stage -->
+          <div class="bump-stage-card is-bumped" id="heroBumpStage" role="button" tabindex="0" aria-label="Tap to trigger the Kring Twin-Ring Bump and Bell Chime">
+            <div class="bump-canvas-wrap">
+              <canvas id="kringLiquidCanvas"></canvas>
+              <div class="bump-pop-word" lang="th">กริ๊ง!</div>
+            </div>
+            <div class="bump-footer-bar">
+              <div class="kr-wave" id="heroWave" aria-hidden="true">
+                <i style="--i:0;--h:5px"></i>
+                <i style="--i:1;--h:12px"></i>
+                <i style="--i:2;--h:16px"></i>
+                <i style="--i:3;--h:10px"></i>
+                <i style="--i:4;--h:7px"></i>
+                <i style="--i:5;--h:5px"></i>
+                <i style="--i:6;--h:3px"></i>
+                <i style="--i:7;--h:14px"></i>
+                <i style="--i:8;--h:16px"></i>
+                <i style="--i:9;--h:11px"></i>
+                <i style="--i:10;--h:7px"></i>
+                <i style="--i:11;--h:4px"></i>
+                <i style="--i:12;--h:3px"></i>
+              </div>
+              <button type="button" class="btn-tap-kring" id="btnTapKring">
+                <span>🔔</span>
+                <span data-i18n-en>Tap to Kring! (กริ๊ง!)</span>
+                <span data-i18n-th lang="th">แตะเพื่อ กริ๊ง!</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="hero-ctas">
+            <a href="#partners" class="btn-primary-gold" id="heroPartnerBtn">
+              <span data-i18n-en>Request Partner / Early Access</span>
+              <span data-i18n-th lang="th">ขอรับสิทธิ์พาร์ทเนอร์ / เปิดตัวก่อนใคร</span>
+              <span>→</span>
+            </a>
+            <a href="#vision" class="btn-secondary-glass">
+              <span data-i18n-en>Explore the Ecosystem</span>
+              <span data-i18n-th lang="th">สำรวจระบบนิเวศกริ๊ง</span>
+            </a>
+          </div>
+
+          <div class="hero-city-strip">
+            <span>✦ BANGKOK · SUKHUMVIT · YAOWARAT · RIVERSIDE</span>
+            <span>✦ PATTAYA · JOMTIEN · KOH LARN</span>
+          </div>
+        </div>
+
+        <!-- 3D DARK-TITANIUM IPHONE PREVIEW -->
+        <div class="hero-right">
+          <div class="phone-3d-rig" id="phoneRig">
+            <div class="foil-sheen"></div>
+
+            <div class="floating-chip chip-top-left">
+              <span class="pulse-dot"></span>
+              <span data-i18n-en>100% Public Venues</span>
+              <span data-i18n-th lang="th">สถานที่สาธารณะ 100%</span>
+            </div>
+
+            <div class="floating-chip chip-bottom-right">
+              <span>⚡</span>
+              <span data-i18n-en>Instant Bump Release</span>
+              <span data-i18n-th lang="th">ปลดล็อกเมื่อแตะกริ๊ง!</span>
+            </div>
+
+            <div class="phone-screen">
+              <div class="phone-island">
+                <span style="font-size:9px;color:var(--ink-60);font-family:var(--font-mono)">KRING OS</span>
+                <span class="phone-island-dot"></span>
+              </div>
+
+              <div class="phone-top-bar">
+                <span class="phone-city-chip">
+                  <span data-i18n-en>📍 Bangkok · Night</span>
+                  <span data-i18n-th lang="th">📍 กรุงเทพฯ · คืนนี้</span>
+                </span>
+                <span class="phone-verified-chip">
+                  <span data-i18n-en>✓ ID Verified</span>
+                  <span data-i18n-th lang="th">✓ ยืนยันตัวตนแล้ว</span>
+                </span>
+              </div>
+
+              <!-- Featured Experience Inside Phone -->
+              <div class="phone-exp-card">
+                <img src="/photos/experiences/wat-arun-temple.jpg" alt="Chao Phraya & Wat Arun Twilight Walk" />
+                <div class="phone-exp-shade">
+                  <div class="phone-exp-top">
+                    <span class="phone-tag-public">
+                      <span data-i18n-en>Public Pier &amp; Rooftop</span>
+                      <span data-i18n-th lang="th">ท่าเรือและรูฟท็อปสาธารณะ</span>
+                    </span>
+                  </div>
+                  <div class="phone-exp-bottom">
+                    <h4>
+                      <span data-i18n-en>Wat Arun Twilight &amp; Old Town Walk</span>
+                      <span data-i18n-th lang="th">เดินเล่นวัดอรุณยามเย็น &amp; ย่านเมืองเก่า</span>
+                    </h4>
+                    <div class="phone-exp-meta">
+                      <span>
+                        <span data-i18n-en>Local Insider · EN / ไทย</span>
+                        <span data-i18n-th lang="th">โลคอลแนะนำ · ไทย / EN</span>
+                      </span>
+                      <span class="phone-price-badge">฿1,500 · 3 hrs</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Secondary Experience Card -->
+              <div class="phone-exp-card" style="height: 118px;">
+                <img src="/photos/experiences/yaowarat-food.jpg" alt="Yaowarat Midnight Street Food" />
+                <div class="phone-exp-shade">
+                  <div class="phone-exp-top">
+                    <span class="phone-tag-public">
+                      <span data-i18n-en>Yaowarat Main Strip</span>
+                      <span data-i18n-th lang="th">ถนนเยาวราช</span>
+                    </span>
+                  </div>
+                  <div class="phone-exp-bottom">
+                    <h4>
+                      <span data-i18n-en>Yaowarat Street-Food &amp; Tea Walk</span>
+                      <span data-i18n-th lang="th">ตะลุยสตรีทฟู้ดเยาวราช &amp; โรงน้ำชา</span>
+                    </h4>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Interactive Two-Phone Bump Pill inside Phone -->
+              <div class="phone-bump-box" id="phoneBumpBanner">
+                <div class="phone-bump-info">
+                  <div class="phone-bump-title">
+                    <svg viewBox="0 0 34 20" width="24" height="14" aria-hidden="true">
+                      <path d="M17 4.4A7.5 7.5 0 0 1 17 15.6A7.5 7.5 0 0 1 17 4.4Z" fill="#9B5CFF" />
+                      <circle cx="11" cy="10" r="7.5" fill="none" stroke="#7381FF" stroke-width="3" />
+                      <circle cx="23" cy="10" r="7.5" fill="none" stroke="#FFB21E" stroke-width="3" />
+                    </svg>
+                    <span data-i18n-en>Two-Phone Bump · แตะกริ๊ง!</span>
+                    <span data-i18n-th lang="th">แตะกริ๊ง! เมื่อเจอกัน</span>
+                  </div>
+                  <div class="phone-bump-desc">
+                    <span data-i18n-en>Escrow held safely until both phones bump</span>
+                    <span data-i18n-th lang="th">ดูแลยอดจองปลอดภัยจนกว่าจะแตะเครื่องกัน</span>
+                  </div>
+                </div>
+                <span style="font-family:var(--font-mono);font-size:11px;color:var(--marigold-hi);font-weight:700;">READY</span>
+              </div>
+
+              <!-- Kring Price Street Check -->
+              <div class="phone-kprice-row">
+                <span class="phone-kprice-label">
+                  <span>🏷️</span>
+                  <span data-i18n-en>Kring Price · ราคากริ๊ง</span>
+                  <span data-i18n-th lang="th">ราคากริ๊ง · เช็กราคาจริง</span>
+                </span>
+                <span class="phone-kprice-val">LIVE INDEX ✦</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 TEASER BENTO CARDS SECTION -->
+      <section class="section-block" id="vision">
+        <div class="section-head">
+          <div class="eyebrow-pill">
+            <span>✦</span>
+            <span data-i18n-en>BUILT FOR TRUST IN BANGKOK &amp; PATTAYA</span>
+            <span data-i18n-th lang="th">ออกแบบเพื่อความมั่นใจในกรุงเทพฯ และพัทยา</span>
+          </div>
+          <h2 class="section-title">
+            <span data-i18n-en>Three pillars of the Kring night-blue stage.</span>
+            <span data-i18n-th lang="th">3 หัวใจหลักของแพลตฟอร์ม กริ๊ง (Kring)</span>
+          </h2>
+          <p class="section-desc">
+            <span data-i18n-en>
+              Designed from the ground up to connect international visitors with verified Thai insiders, transparent local pricing, and instant physical arrival confirmation.
+            </span>
+            <span data-i18n-th lang="th">
+              เชื่อมโยงผู้มาเยือนจากทั่วโลกเข้ากับโลคอลตัวจริงในไทย ด้วยการยืนยันการพบกันหน้างานและข้อมูลราคาท้องถิ่นที่โปร่งใส
+            </span>
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Card 1: Curated Local Experiences -->
+          <article class="bento-card tilt-card">
+            <div class="foil-sheen"></div>
+            <div class="bento-visual">
+              <div class="bento-photo-strip">
+                <img src="/photos/experiences/chao-phraya-sunset.jpg" alt="Chao Phraya Sunset" />
+                <img src="/photos/experiences/talat-noi-oldtown.jpg" alt="Talat Noi Creative Walk" />
+              </div>
+              <div class="bento-overlay-pill">
+                <span data-i18n-en>18 Curated Categories</span>
+                <span data-i18n-th lang="th">18 หมวดหมู่ไลฟ์สไตล์</span>
+                <span style="color:var(--mint-ok)">100% Public Venues</span>
+              </div>
+            </div>
+            <div class="bento-body">
+              <span class="bento-kicker">01 · ประสบการณ์จริงกับโลคอล</span>
+              <h3 class="bento-title">
+                <span data-i18n-en>Curated Local Experiences</span>
+                <span data-i18n-th lang="th">ประสบการณ์จริงกับโลคอล</span>
+              </h3>
+              <p class="bento-text">
+                <span data-i18n-en>
+                  Verified Bangkok &amp; Pattaya insiders — street-food walks, temple mornings, sunset rooftops, licensed spas, and creative culture hosted strictly at 100% public venues.
+                </span>
+                <span data-i18n-th lang="th">
+                  โลคอลตัวจริงที่ผ่านการยืนยันตัวตน พาเดินชิมสตรีทฟู้ด ไหว้พระยามเช้า รูฟท็อปชมวิว สปาชั้นนำ และย่านสร้างสรรค์ ณ สถานที่สาธารณะ 100%
+                </span>
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 2: The กริ๊ง! Two-Phone Bump -->
+          <article class="bento-card tilt-card">
+            <div class="foil-sheen"></div>
+            <div class="bento-visual">
+              <div class="bento-bump-stage">
+                <svg class="bento-rings-svg" viewBox="0 0 200 100" aria-hidden="true">
+                  <circle class="ring-left" cx="76" cy="50" r="34" fill="none" stroke="#7381FF" stroke-width="10" />
+                  <circle class="ring-right" cx="124" cy="50" r="34" fill="none" stroke="#FFB21E" stroke-width="10" />
+                  <path class="ring-lens" d="M100 26A34 34 0 0 1 100 74A34 34 0 0 1 100 26Z" fill="#9B5CFF" />
+                </svg>
+                <span style="font-family:var(--font-mono);font-size:11px;color:var(--violet-hi);font-weight:700;">
+                  ANCHAN × MARIGOLD = กริ๊ง!
+                </span>
+              </div>
+            </div>
+            <div class="bento-body">
+              <span class="bento-kicker">02 · แตะกริ๊ง! เมื่อเจอกัน</span>
+              <h3 class="bento-title">
+                <span data-i18n-en>The กริ๊ง! Two-Phone Bump</span>
+                <span data-i18n-th lang="th">แตะกริ๊ง! เมื่อเจอกันหน้างาน</span>
+              </h3>
+              <p class="bento-text">
+                <span data-i18n-en>
+                  Booking funds are held safely in escrow and released only when both phones bump together at the public meeting point. Zero no-shows. Instant mutual trust.
+                </span>
+                <span data-i18n-th lang="th">
+                  ยอดจองถูกดูแลอย่างปลอดภัย และปลดล็อกทันทีเมื่อโทรศัพท์ทั้งสองเครื่องแตะ กริ๊ง! กัน ณ จุดนัดพบสาธารณะ มั่นใจทั้งผู้มาเยือนและโลคอล
+                </span>
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 3: Kring Price (ราคากริ๊ง) -->
+          <article class="bento-card tilt-card">
+            <div class="foil-sheen"></div>
+            <div class="bento-visual">
+              <div class="bento-price-board">
+                <div class="price-ticker-item">
+                  <span>🍜 Yaowarat Street Dish</span>
+                  <strong>฿60 – ฿120</strong>
+                </div>
+                <div class="price-ticker-item">
+                  <span>🚤 Chao Phraya Express</span>
+                  <strong>฿16 – ฿40</strong>
+                </div>
+                <div class="price-ticker-item">
+                  <span>📶 Tourist 5G eSIM + Perks</span>
+                  <strong style="color:var(--mint-ok)">KRING PASS</strong>
+                </div>
+              </div>
+            </div>
+            <div class="bento-body">
+              <span class="bento-kicker">03 · ราคากริ๊ง (KRING PRICE)</span>
+              <h3 class="bento-title">
+                <span data-i18n-en>Kring Price &amp; Partner Passes</span>
+                <span data-i18n-th lang="th">ราคากริ๊ง &amp; สิทธิพิเศษพาร์ทเนอร์</span>
+              </h3>
+              <p class="bento-text">
+                <span data-i18n-en>
+                  Real-time Bangkok &amp; Pattaya street-price check so visitors never overpay — paired with instant partner passes for 5G eSIMs, airport transfers, licensed spas, and cultural perks.
+                </span>
+                <span data-i18n-th lang="th">
+                  เช็กราคาท้องถิ่นจริงในกรุงเทพฯ และพัทยาแบบเรียลไทม์ พร้อมรับวอยเชอร์พาร์ทเนอร์ ทั้ง 5G eSIM รถรับส่งสนามบิน สปา และร้านอาหารชั้นนำ
+                </span>
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- PARTNER & FOUNDING AGENCY PREVIEW SECTION -->
+      <section class="partner-section" id="partners">
+        <div class="partner-shell">
+          <div class="partner-left">
+            <div class="eyebrow-pill" style="align-self:flex-start;">
+              <span>🤝</span>
+              <span data-i18n-en>FOUNDING PARTNER &amp; AGENCY PORTAL</span>
+              <span data-i18n-th lang="th">พอร์ทัลสำหรับพาร์ทเนอร์และเอเจนซี่ก่อตั้ง</span>
+            </div>
+
+            <h2 class="section-title" style="text-align:left;">
+              <span data-i18n-en>Partner with Kring for our Bangkok &amp; Pattaya launch.</span>
+              <span data-i18n-th lang="th">ร่วมเป็นพาร์ทเนอร์ก่อตั้งกับ กริ๊ง (Kring)</span>
+            </h2>
+
+            <p class="section-desc" style="text-align:left;">
+              <span data-i18n-en>
+                We are onboarding select talent rosters, lifestyle &amp; hospitality groups, B2B voucher providers, and cross-border payment infrastructure partners ahead of public release.
+              </span>
+              <span data-i18n-th lang="th">
+                เปิดรับพันธมิตรเอเจนซี่ครีเอเตอร์ กลุ่มธุรกิจท่องเที่ยวและไลฟ์สไตล์ ผู้ให้บริการวอยเชอร์ และระบบชำระเงินระดับสากล ก่อนเปิดตัวเต็มรูปแบบ
+              </span>
+            </p>
+
+            <div class="partner-cards-stack">
+              <!-- Lane 1: Talent & Creator Agencies -->
+              <div class="partner-lane-card">
+                <div class="lane-top">
+                  <span class="lane-badge">
+                    <span data-i18n-en>TALENT, CREATOR &amp; BRAND ROSTERS</span>
+                    <span data-i18n-th lang="th">เอเจนซี่โมเดล ครีเอเตอร์ และแบรนด์</span>
+                  </span>
+                  <a href="mailto:partnerships@kringapp.com" class="lane-email">partnerships@kringapp.com</a>
+                </div>
+                <h3 class="lane-title">
+                  <span data-i18n-en>Founding Talent &amp; Creator Agencies</span>
+                  <span data-i18n-th lang="th">เอเจนซี่ทาเลนต์ ครีเอเตอร์ และไลฟ์สไตล์</span>
+                </h3>
+                <p class="lane-desc">
+                  <span data-i18n-en>
+                    Priority roster onboarding for Bangkok &amp; Pattaya model, lifestyle, and creator agencies. 100% public-venue cultural &amp; social experiences with direct automated settlement and agency dashboard visibility.
+                  </span>
+                  <span data-i18n-th lang="th">
+                    สิทธิพิเศษสำหรับเอเจนซี่ชั้นนำในกรุงเทพฯ และพัทยา ยกระดับการรับงานท่องเที่ยวและไลฟ์สไตล์ในสถานที่สาธารณะ 100% พร้อมระบบสรุปยอดอัตโนมัติที่โปร่งใส
+                  </span>
+                </p>
+              </div>
+
+              <!-- Lane 2: Payments, B2B Vouchers & Infrastructure -->
+              <div class="partner-lane-card">
+                <div class="lane-top">
+                  <span class="lane-badge is-gold">
+                    <span data-i18n-en>PAYMENTS, B2B VOUCHERS &amp; MOBILITY</span>
+                    <span data-i18n-th lang="th">ระบบชำระเงิน วอยเชอร์ B2B และการเดินทาง</span>
+                  </span>
+                  <a href="mailto:ops@kringapp.com" class="lane-email">ops@kringapp.com</a>
+                </div>
+                <h3 class="lane-title">
+                  <span data-i18n-en>Global Payments, B2B Vouchers &amp; Mobility Partners</span>
+                  <span data-i18n-th lang="th">พันธมิตรระบบชำระเงิน วอยเชอร์ และบริการท่องเที่ยว</span>
+                </h3>
+                <p class="lane-desc">
+                  <span data-i18n-en>
+                    Direct integration for multi-currency tourist checkout, instant PromptPay payout rails, 5G eSIM distribution, airport transfer fleets, and licensed spa &amp; dining groups.
+                  </span>
+                  <span data-i18n-th lang="th">
+                    เชื่อมต่อระบบชำระเงินสำหรับนักท่องเที่ยวต่างชาติ การโอนจ่ายพร้อมเพย์อัตโนมัติ วอยเชอร์ 5G eSIM รถรับส่งสนามบิน สปา และกลุ่มร้านอาหารชั้นนำ
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Request Partner Access Form -->
+          <div class="partner-form-card">
+            <div>
+              <h3 class="form-title">
+                <span data-i18n-en>Request Partner Access / Early Invite</span>
+                <span data-i18n-th lang="th">ขอรับสิทธิ์พาร์ทเนอร์ / คำเชิญล่วงหน้า</span>
+              </h3>
+              <p class="form-sub">
+                <span data-i18n-en>Select your track to generate an instant partner brief &amp; direct dispatch to our Bangkok &amp; Pattaya team.</span>
+                <span data-i18n-th lang="th">เลือกประเภทความร่วมมือเพื่อรับรหัสพาร์ทเนอร์และติดต่อทีมงานกริ๊งโดยตรง</span>
+              </p>
+            </div>
+
+            <form id="partnerInviteForm">
+              <div class="field-group" style="margin-bottom:14px;">
+                <label class="field-label">
+                  <span data-i18n-en>Select Category</span>
+                  <span data-i18n-th lang="th">เลือกหมวดหมู่</span>
+                </label>
+                <div class="cat-grid" id="categoryGrid">
+                  <button type="button" class="cat-chip is-selected" data-cat="Talent / Model Agency" data-target="partnerships@kringapp.com">
+                    ✨ Talent / Model Agency
+                  </button>
+                  <button type="button" class="cat-chip" data-cat="Brand / Voucher Partner" data-target="partnerships@kringapp.com">
+                    🎟️ Brand / Voucher Partner
+                  </button>
+                  <button type="button" class="cat-chip" data-cat="Payment / Infrastructure" data-target="ops@kringapp.com">
+                    ⚡ Payment / Infrastructure
+                  </button>
+                  <button type="button" class="cat-chip" data-cat="VIP Early Access" data-target="partnerships@kringapp.com">
+                    🥂 VIP Early Access
+                  </button>
+                </div>
+              </div>
+
+              <div class="field-group" style="margin-bottom:12px;">
+                <label class="field-label" for="partnerOrg">
+                  <span data-i18n-en>Organization / Agency / Name</span>
+                  <span data-i18n-th lang="th">ชื่อบริษัท / เอเจนซี่ / ชื่อผู้ติดต่อ</span>
+                </label>
+                <input type="text" id="partnerOrg" class="field-input" placeholder="e.g. The Socialite Models / Luxury Mobility Group" required />
+              </div>
+
+              <div class="field-group" style="margin-bottom:12px;">
+                <label class="field-label" for="partnerEmail">
+                  <span data-i18n-en>Work Email</span>
+                  <span data-i18n-th lang="th">อีเมลติดต่อ</span>
+                </label>
+                <input type="email" id="partnerEmail" class="field-input" placeholder="name@company.com" required />
+              </div>
+
+              <div class="field-group" style="margin-bottom:18px;">
+                <label class="field-label" for="partnerNote">
+                  <span data-i18n-en>City &amp; Partnership Note (Optional)</span>
+                  <span data-i18n-th lang="th">เมืองและรายละเอียดเพิ่มเติม (ถ้ามี)</span>
+                </label>
+                <input type="text" id="partnerNote" class="field-input" placeholder="Bangkok / Pattaya · Roster size, API rail, or voucher inquiry" />
+              </div>
+
+              <button type="submit" class="btn-submit-invite" id="btnSubmitInvite">
+                <span data-i18n-en>Activate Partner Pass &amp; Connect →</span>
+                <span data-i18n-th lang="th">ยืนยันสิทธิ์พาร์ทเนอร์และติดต่อทีมงาน →</span>
+              </button>
+            </form>
+
+            <!-- Instant Futuristic Confirmation Pass -->
+            <div class="invite-confirmation" id="inviteConfirmation" role="status" aria-live="polite">
+              <div class="pass-header">
+                <span>✓ KRING PARTNER PASS ISSUED</span>
+                <span id="passCodeDisplay">KR-BKK-8842</span>
+              </div>
+              <p style="font-size:13px;line-height:1.5;color:var(--ink-100);" id="passSummaryText">
+                Your partner inquiry is ready for direct dispatch to <strong>partnerships@kringapp.com</strong>.
+              </p>
+              <a href="mailto:partnerships@kringapp.com" id="passMailtoLink" class="btn-secondary-glass" style="justify-content:center;padding:10px 16px;font-size:12.5px;">
+                <span>✉️ Open Email Dispatch</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <svg viewBox="0 0 34 20" width="32" height="19" aria-hidden="true">
+          <path d="M17 4.4A7.5 7.5 0 0 1 17 15.6A7.5 7.5 0 0 1 17 4.4Z" fill="#9B5CFF" />
+          <circle cx="11" cy="10" r="7.5" fill="none" stroke="#7381FF" stroke-width="3" />
+          <circle cx="23" cy="10" r="7.5" fill="none" stroke="#FFB21E" stroke-width="3" />
+        </svg>
+        <div>
+          <strong style="color:var(--ink-100);">Kring · Bangkok &amp; Pattaya · Thailand</strong>
+          <div style="font-size:12px;color:var(--ink-40);">
+            <span data-i18n-en>kringapp.com · Verified Local Experiences &amp; Kring Price Intelligence</span>
+            <span data-i18n-th lang="th">kringapp.com · กริ๊ง · เที่ยวกับโลคอลตัวจริง ในราคากันเอง</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-emails">
+        <a href="mailto:partnerships@kringapp.com">partnerships@kringapp.com</a>
+        <span>·</span>
+        <a href="mailto:ops@kringapp.com">ops@kringapp.com</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- KRING LIQUID LIGHT ENGINE + WEBAUDIO CHIME + 3D TILT + BILINGUAL SWITCH -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ------------------------------------------------------------------ */
+      /* 1. Bilingual Switcher (EN | ไทย)                                   */
+      /* ------------------------------------------------------------------ */
+      const htmlEl = document.documentElement;
+      const btnEn = document.getElementById('btnLangEn');
+      const btnTh = document.getElementById('btnLangTh');
+
+      function setLanguage(lang) {
+        htmlEl.setAttribute('data-lang', lang);
+        htmlEl.setAttribute('lang', lang === 'th' ? 'th' : 'en');
+        if (btnEn && btnTh) {
+          btnEn.classList.toggle('is-active', lang === 'en');
+          btnTh.classList.toggle('is-active', lang === 'th');
+        }
+      }
+
+      if (btnEn) btnEn.addEventListener('click', function () { setLanguage('en'); });
+      if (btnTh) btnTh.addEventListener('click', function () { setLanguage('th'); });
+
+      /* ------------------------------------------------------------------ */
+      /* 2. Synthesized WebAudio Crystal Bell Chime (กริ๊ง!)                */
+      /* ------------------------------------------------------------------ */
+      let audioCtx = null;
+
+      function playCrystalBell() {
+        try {
+          const Ctor = window.AudioContext || window.webkitAudioContext;
+          if (!Ctor) return;
+          if (!audioCtx) audioCtx = new Ctor();
+          if (audioCtx.state === 'suspended') audioCtx.resume();
+
+          // Two-note crystal brass bell chime (D6 -> A6 / E6 -> B6 fifth harmonic partials)
+          const notes = [
+            { freq: 1174.66, delay: 0, level: 0.18 },   // D6
+            { freq: 1760.00, delay: 0.088, level: 0.20 } // A6
+          ];
+          const partials = [1, 2.76, 5.4];
+
+          notes.forEach(function (n) {
+            partials.forEach(function (k, idx) {
+              const osc = audioCtx.createOscillator();
+              const gain = audioCtx.createGain();
+              const t0 = audioCtx.currentTime + n.delay;
+              osc.type = 'sine';
+              osc.frequency.setValueAtTime(n.freq * k, t0);
+              gain.gain.setValueAtTime(0.0001, t0);
+              gain.gain.linearRampToValueAtTime(n.level / ((idx + 1) * (idx + 1)), t0 + 0.005);
+              gain.gain.exponentialRampToValueAtTime(0.0001, t0 + (idx ? 0.32 : 0.85));
+              osc.connect(gain);
+              gain.connect(audioCtx.destination);
+              osc.start(t0);
+              osc.stop(t0 + 0.9);
+            });
+          });
+        } catch (e) {
+          // Best-effort WebAudio
+        }
+      }
+
+      /* ------------------------------------------------------------------ */
+      /* 3. Official Kring "Liquid Light" Canvas Twin-Ring Engine           */
+      /* ------------------------------------------------------------------ */
+      const TAU = Math.PI * 2;
+      const C = {
+        blueA: [52, 70, 255],
+        blueB: [115, 129, 255],
+        blueHi: [200, 206, 255],
+        goldA: [255, 178, 30],
+        goldB: [255, 208, 103],
+        goldC: [255, 240, 184],
+        white: [255, 255, 255]
+      };
+
+      function rgba(c, a) {
+        const clamped = a < 0 ? 0 : a > 1 ? 1 : +a.toFixed(3);
+        return 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + clamped + ')';
+      }
+      function clamp(x, a, b) {
+        if (a === undefined) a = 0;
+        if (b === undefined) b = 1;
+        return x < a ? a : x > b ? b : x;
+      }
+      function smooth(a, b, x) {
+        const t = clamp((x - a) / (b - a));
+        return t * t * (3 - 2 * t);
+      }
+      function easeOut3(t) {
+        return 1 - Math.pow(1 - t, 3);
+      }
+      function rnd(i, k) {
+        const x = Math.sin(i * 127.1 + k * 311.7) * 43758.5453;
+        return x - Math.floor(x);
+      }
+
+      const PAL = {
+        a: {
+          hi: C.blueHi,
+          partner: C.goldB,
+          dir: 1,
+          glass: [[0, '#2434E8'], [0.16, '#3446FF'], [0.36, '#7381FF'], [0.5, '#B9C1FF'], [0.62, '#7381FF'], [0.82, '#3446FF'], [1, '#2434E8']]
+        },
+        b: {
+          hi: C.goldC,
+          partner: C.blueB,
+          dir: -1,
+          glass: [[0, '#E89400'], [0.18, '#FFB21E'], [0.38, '#FFD067'], [0.52, '#FFF0B8'], [0.64, '#FFD067'], [0.84, '#FFB21E'], [1, '#E89400']]
+        }
+      };
+
+      const GEOM = { cx: 100, cy: 60, r: 42, x0: -70, y0: -60, w: 340, h: 240 };
+      const BEAT = { ta: 0.65, travel: 135 / 76, total: 2.4, k: 1 };
+
+      const cv = document.getElementById('kringLiquidCanvas');
+      const heroStage = document.getElementById('heroBumpStage');
+      const phoneBanner = document.getElementById('phoneBumpBanner');
+
+      if (cv && cv.getContext) {
+        const ctx = cv.getContext('2d');
+        const hasConic = 'createConicGradient' in ctx;
+        let scale = 1;
+        let sprites = null;
+        let spScale = 0;
+
+        function resizeCanvas() {
+          const r = cv.getBoundingClientRect();
+          const dpr = Math.min(window.devicePixelRatio || 1, 1.75);
+          const pw = Math.max(1, Math.round(r.width * dpr));
+          const ph = Math.max(1, Math.round(r.height * dpr));
+          if (cv.width !== pw || cv.height !== ph) {
+            cv.width = pw;
+            cv.height = ph;
+          }
+          scale = pw / GEOM.w;
+        }
+
+        function getSprites() {
+          if (sprites && Math.abs(spScale - scale) < 0.01) return sprites;
+          const R = GEOM.r;
+          const f = R / 76;
+          const SW = R * (13 / 76);
+          const sc = scale;
+
+          function ringGlow(col, w, blur) {
+            const half = R + w + blur * 2.4;
+            const size = Math.max(2, Math.ceil(half * 2 * sc));
+            const c = document.createElement('canvas');
+            c.width = c.height = size;
+            const x = c.getContext('2d');
+            x.scale(sc, sc);
+            x.shadowColor = rgba(col, 1);
+            x.shadowBlur = blur * sc;
+            x.shadowOffsetX = 10000 * sc;
+            x.lineWidth = w;
+            x.strokeStyle = '#000';
+            for (let i = 0; i < 2; i++) {
+              x.beginPath();
+              x.arc(half - 10000, half, R, 0, TAU);
+              x.stroke();
+            }
+            return { cv: c, half: half };
+          }
+
+          function disc(col, r, core) {
+            if (core === undefined) core = 0.35;
+            const size = Math.max(2, Math.ceil(r * 2 * sc));
+            const c = document.createElement('canvas');
+            c.width = c.height = size;
+            const x = c.getContext('2d');
+            const gr = x.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2);
+            gr.addColorStop(0, rgba(col, 1));
+            gr.addColorStop(core * 0.4, rgba(col, 0.55));
+            gr.addColorStop(core, rgba(col, 0.18));
+            gr.addColorStop(1, rgba(col, 0));
+            x.fillStyle = gr;
+            x.fillRect(0, 0, size, size);
+            return { cv: c, half: r };
+          }
+
+          sprites = {
+            gA: ringGlow(C.blueA, SW * 1.4, 16 * f),
+            gB: ringGlow(C.goldA, SW * 1.4, 16 * f),
+            white: disc(C.white, 160 * f, 0.3),
+            blue: disc(C.blueA, 200 * f, 0.5),
+            gold: disc(C.goldA, 200 * f, 0.5),
+            warm: disc(C.goldC, 200 * f, 0.4)
+          };
+          spScale = scale;
+          return sprites;
+        }
+
+        function drawSprite(s, x, y, a, k) {
+          if (k === undefined) k = 1;
+          if (a <= 0.003) return;
+          ctx.globalAlpha = Math.min(1, a);
+          const h = s.half * k;
+          ctx.drawImage(s.cv, x - h, y - h, h * 2, h * 2);
+          ctx.globalAlpha = 1;
+        }
+
+        function makeConic(start, x, y, stops) {
+          const R = GEOM.r;
+          const gr = hasConic ? ctx.createConicGradient(start, x, y) : ctx.createLinearGradient(x - R, y - R, x + R, y + R);
+          for (let i = 0; i < stops.length; i++) {
+            gr.addColorStop(stops[i][0], stops[i][1]);
+          }
+          return gr;
+        }
+
+        function drawComet(x, y, r, head, len, dir, col, a, w) {
+          if (a <= 0.01) return;
+          const L = len / TAU;
+          let gr;
+          if (dir > 0) {
+            gr = makeConic(head - len, x, y, [
+              [0, rgba(col, 0)],
+              [L * 0.6, rgba(col, a * 0.25)],
+              [L * 0.92, rgba(col, a * 0.8)],
+              [L, rgba(col, a)],
+              [Math.min(1, L + 0.002), rgba(col, 0)],
+              [1, rgba(col, 0)]
+            ]);
+            ctx.beginPath();
+            ctx.arc(x, y, r, head - len, head);
+          } else {
+            gr = makeConic(head, x, y, [
+              [0, rgba(col, a)],
+              [L * 0.08, rgba(col, a * 0.8)],
+              [L * 0.4, rgba(col, a * 0.25)],
+              [L, rgba(col, 0)],
+              [1, rgba(col, 0)]
+            ]);
+            ctx.beginPath();
+            ctx.arc(x, y, r, head, head + len);
+          }
+          ctx.strokeStyle = gr;
+          ctx.lineWidth = w;
+          ctx.lineCap = 'round';
+          ctx.stroke();
+          ctx.lineCap = 'butt';
+        }
+
+        function computeFrame(t) {
+          const c = t - BEAT.ta;
+          const R = GEOM.r;
+          const half = 0.8 * R;
+          let off;
+          if (c < 0) {
+            const p = clamp(t / BEAT.ta);
+            off = BEAT.travel * R * (1 - (0.22 * p + 0.78 * p * p * p));
+          } else {
+            off = -(5 / 76) * R * BEAT.k * Math.exp(-c * 6.5) * Math.sin(c * 20);
+          }
+          const ax = GEOM.cx - half - off;
+          const bx = GEOM.cx + half + off;
+          const dx = (bx - ax) / 2;
+          const idleK = smooth(BEAT.total - 0.2, BEAT.total + 1.2, t);
+          return {
+            t: t,
+            c: c,
+            k: BEAT.k,
+            ax: ax,
+            bx: bx,
+            mx: (ax + bx) / 2,
+            dx: dx,
+            h: dx < R ? Math.sqrt(R * R - dx * dx) : -1,
+            appear: smooth(0, 0.22, t),
+            flash: c >= 0 ? Math.exp(-c * 6.5) * BEAT.k : 0,
+            lens: c < 0 ? 0 : Math.min(1, 0.88 + 0.12 * Math.sin((TAU * t) / 4.2) * idleK + 0.45 * Math.exp(-c * 3.5)) * smooth(0, 0.05, c),
+            exch: c < 0 ? 0 : smooth(0, 0.65, c),
+            flow: t,
+            idleK: idleK,
+            floatY: (3 / 76) * R * Math.sin((TAU * t) / 6.5) * idleK,
+            tiltX: 0.05 * Math.sin((TAU * t) / 6.5 + 1.1) * idleK,
+            tiltY: 0.05 * Math.sin((TAU * t) / 8.0) * idleK
+          };
+        }
+
+        function renderFrame(st) {
+          const R = GEOM.r;
+          const SW = R * (13 / 76);
+          const f = R / 76;
+          const CY = GEOM.cy;
+          const s = getSprites();
+
+          ctx.setTransform(scale, 0, 0, scale, -GEOM.x0 * scale, -GEOM.y0 * scale);
+          ctx.clearRect(GEOM.x0, GEOM.y0, GEOM.w, GEOM.h);
+
+          ctx.globalCompositeOperation = 'lighter';
+          drawSprite(s.blue, st.ax - 20 * f, CY, (0.18 + 0.32 * st.flash) * st.appear, 1.25);
+          drawSprite(s.gold, st.bx + 20 * f, CY, (0.14 + 0.28 * st.flash) * st.appear, 1.25);
+          ctx.globalCompositeOperation = 'source-over';
+
+          ctx.save();
+          if (st.idleK) {
+            ctx.translate(GEOM.cx, CY + st.floatY);
+            ctx.transform(Math.cos(st.tiltY), st.tiltY * 0.2, st.tiltX * 0.2, Math.cos(st.tiltX), 0, 0);
+            ctx.translate(-GEOM.cx, -CY);
+          }
+
+          ctx.globalCompositeOperation = 'lighter';
+          const ga = (0.52 + 0.1 * Math.sin(st.flow * 1.3) * st.idleK + 0.5 * st.flash) * st.appear;
+          drawSprite(s.gA, st.ax, CY, ga);
+          drawSprite(s.gB, st.bx, CY, ga * 0.88);
+          ctx.globalCompositeOperation = 'source-over';
+
+          // Overlap Violet Lens
+          if (st.lens > 0.01 && st.h >= 0) {
+            const ri = R - SW / 2;
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(st.ax, CY, ri, 0, TAU);
+            ctx.clip();
+            const gr = ctx.createRadialGradient(st.mx, CY, 0, st.mx, CY, ri * 0.78);
+            const a = st.lens;
+            gr.addColorStop(0, 'rgba(214,186,255,' + a + ')');
+            gr.addColorStop(0.35, 'rgba(170,112,255,' + a + ')');
+            gr.addColorStop(1, 'rgba(155,92,255,' + (0.92 * a) + ')');
+            ctx.fillStyle = gr;
+            ctx.beginPath();
+            ctx.arc(st.bx, CY, ri, 0, TAU);
+            ctx.fill();
+            ctx.restore();
+          }
+
+          const specShift = st.tiltY * 6 - st.tiltX * 3;
+
+          function paintRing(w) {
+            const p = PAL[w];
+            const x = w === 'a' ? st.ax : st.bx;
+            const dir = p.dir;
+            ctx.globalAlpha = st.appear;
+            ctx.strokeStyle = makeConic(st.flow * 0.55 * dir, x, CY, p.glass);
+            ctx.lineWidth = SW;
+            ctx.beginPath();
+            ctx.arc(x, CY, R, 0, TAU);
+            ctx.stroke();
+
+            ctx.lineWidth = SW * 0.26;
+            ctx.strokeStyle = 'rgba(5,6,20,.26)';
+            ctx.beginPath();
+            ctx.arc(x, CY, R - SW * 0.36, 0, TAU);
+            ctx.stroke();
+
+            ctx.lineWidth = Math.max(0.6, 1.1 * f);
+            ctx.strokeStyle = 'rgba(255,255,255,.34)';
+            ctx.beginPath();
+            ctx.arc(x, CY, R + SW / 2 - 0.6 * f, 0, TAU);
+            ctx.stroke();
+
+            ctx.lineWidth = Math.max(0.5, 0.8 * f);
+            ctx.strokeStyle = rgba(p.hi, 0.36);
+            ctx.beginPath();
+            ctx.arc(x, CY, R - SW / 2 + 0.8 * f, 0, TAU);
+            ctx.stroke();
+
+            ctx.globalAlpha = 1;
+            ctx.globalCompositeOperation = 'lighter';
+            drawComet(x, CY, R, st.flow * 1.05 * dir + (w === 'a' ? 0 : 2.4), 2.2, dir, p.hi, 0.55 * st.appear, SW * 0.42);
+            drawComet(x, CY, R, st.flow * 0.8 * dir + (w === 'a' ? 3.4 : 0.4), 2.0, dir, p.partner, st.exch, SW * 0.62);
+
+            if (st.c >= 0 && st.c < 1.4) {
+              const base = w === 'a' ? 0 : Math.PI;
+              const cr = Math.acos(clamp(st.dx / R, -1, 1));
+              const pk = Math.exp(-st.c * 2.4) * st.k;
+              const trav = easeOut3(clamp(st.c / 1.1)) * 3.3;
+              const fi = smooth(0.03, 0.22, st.c);
+              [-1, 1].forEach(function (sgn) {
+                const a0 = base + sgn * cr * (w === 'a' ? 1 : -1);
+                drawComet(x, CY, R, a0 + trav, 1.5, 1, p.hi, pk * 0.8 * fi, SW * 0.55);
+                drawComet(x, CY, R, a0 + trav, 0.5, 1, C.white, pk * 0.7 * fi, SW * 0.3);
+                drawComet(x, CY, R, a0 - trav, 1.5, -1, p.hi, pk * 0.8 * fi, SW * 0.55);
+                drawComet(x, CY, R, a0 - trav, 0.5, -1, C.white, pk * 0.7 * fi, SW * 0.3);
+              });
+            }
+
+            ctx.globalCompositeOperation = 'source-over';
+            ctx.globalAlpha = st.appear;
+            ctx.lineCap = 'round';
+            ctx.lineWidth = SW * 0.2;
+            ctx.strokeStyle = 'rgba(255,255,255,.62)';
+            ctx.beginPath();
+            ctx.arc(x, CY, R + SW * 0.1, -2.55 + specShift, -1.85 + specShift);
+            ctx.stroke();
+            ctx.lineCap = 'butt';
+            ctx.globalAlpha = 1;
+          }
+
+          paintRing('b');
+          paintRing('a');
+          if (st.h > 0) {
+            ctx.save();
+            ctx.beginPath();
+            ctx.rect(st.mx - SW * 1.7, CY + st.h - SW * 1.7, SW * 3.4, SW * 3.4);
+            ctx.clip();
+            paintRing('b');
+            ctx.restore();
+          }
+
+          // Contact Shockwaves + 30 Sparks
+          const c = st.c;
+          if (c >= 0 && c <= 1.65) {
+            const k = st.k;
+            ctx.globalCompositeOperation = 'lighter';
+            drawSprite(s.white, st.mx, CY, st.flash * 0.95, 0.55 + 0.9 * (1 - st.flash));
+            drawSprite(s.warm, st.mx, CY, st.flash * 0.38, 1.4);
+
+            const cols = [C.white, C.blueB, C.goldB];
+            for (let i = 0; i < 3; i++) {
+              const ci = c - i * 0.1;
+              if (ci < 0 || ci > 1.15) continue;
+              const p = ci / 1.15;
+              const rr = 24 * f + 280 * f * k * easeOut3(p);
+              ctx.strokeStyle = rgba(cols[i], Math.pow(1 - p, 1.7) * 0.58 * k);
+              ctx.lineWidth = (0.8 + 2.6 * (1 - p)) * Math.max(0.6, f);
+              ctx.beginPath();
+              ctx.arc(st.mx, CY, rr, 0, TAU);
+              ctx.stroke();
+            }
+
+            const n = 30;
+            const hh = R * 0.6;
+            for (let i = 0; i < n; i++) {
+              const org = i % 3;
+              const oy = org === 0 ? CY - hh : org === 1 ? CY + hh : CY;
+              let ang = rnd(i, 1) * TAU;
+              if (org === 0) ang = -Math.PI / 2 + (rnd(i, 1) - 0.5) * 2.4;
+              if (org === 1) ang = Math.PI / 2 + (rnd(i, 1) - 0.5) * 2.4;
+              const spd = (140 + rnd(i, 2) * 320) * f;
+              const life = 0.45 + rnd(i, 3) * 0.45;
+              if (c > life) continue;
+              const d = (spd * (1 - Math.exp(-c * 5))) / 5;
+              const tail = 4 * f + spd * 0.06 * Math.exp(-c * 5);
+              const x = st.mx + Math.cos(ang) * d;
+              const y = oy + Math.sin(ang) * d;
+              const col = i % 4 === 0 ? C.white : i % 2 ? C.goldC : C.blueHi;
+              ctx.strokeStyle = rgba(col, 1 - c / life);
+              ctx.lineWidth = (1.6 * (1 - c / life) + 0.4) * Math.max(0.6, f);
+              ctx.beginPath();
+              ctx.moveTo(x, y);
+              ctx.lineTo(x - Math.cos(ang) * tail, y - Math.sin(ang) * tail);
+              ctx.stroke();
+            }
+            ctx.globalCompositeOperation = 'source-over';
+          }
+          ctx.restore();
+        }
+
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        let t0 = performance.now();
+        let firedContact = false;
+        let playSoundOnContact = false;
+
+        function onBumpContact() {
+          firedContact = true;
+          if (heroStage) {
+            heroStage.classList.add('is-bumped');
+            heroStage.classList.remove('is-ringing');
+            void heroStage.offsetWidth;
+            heroStage.classList.add('is-ringing');
+          }
+          if (phoneBanner) {
+            phoneBanner.classList.add('is-flash');
+            setTimeout(function () { phoneBanner.classList.remove('is-flash'); }, 750);
+          }
+          if (playSoundOnContact) {
+            playCrystalBell();
+          }
+        }
+
+        function triggerKringBump(withAudio) {
+          t0 = performance.now();
+          firedContact = false;
+          playSoundOnContact = !!withAudio;
+          if (heroStage) {
+            heroStage.classList.remove('is-bumped');
+          }
+        }
+
+        function loop(now) {
+          const t = (now - t0) / 1000;
+          const st = computeFrame(t);
+          renderFrame(st);
+          if (!firedContact && t >= BEAT.ta) {
+            onBumpContact();
+          }
+          requestAnimationFrame(loop);
+        }
+        requestAnimationFrame(loop);
+
+        if (heroStage) {
+          heroStage.addEventListener('click', function () {
+            triggerKringBump(true);
+          });
+          heroStage.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              triggerKringBump(true);
+            }
+          });
+        }
+        const navBrand = document.getElementById('navBrandBump');
+        if (navBrand) {
+          navBrand.addEventListener('click', function () {
+            triggerKringBump(true);
+          });
+        }
+      }
+
+      /* ------------------------------------------------------------------ */
+      /* 4. 3D Tilt & Specular Foil Sheen on Phone Stage & Bento Cards      */
+      /* ------------------------------------------------------------------ */
+      const phoneRig = document.getElementById('phoneRig');
+      const tiltCards = document.querySelectorAll('.tilt-card');
+
+      function attachTilt(el, maxDeg) {
+        if (!el) return;
+        el.addEventListener('pointermove', function (e) {
+          const rect = el.getBoundingClientRect();
+          const px = (e.clientX - rect.left) / rect.width;
+          const py = (e.clientY - rect.top) / rect.height;
+          const ry = (px - 0.5) * maxDeg * 2;
+          const rx = (0.5 - py) * maxDeg * 2;
+          el.style.setProperty('--rx', rx.toFixed(2) + 'deg');
+          el.style.setProperty('--ry', ry.toFixed(2) + 'deg');
+          el.style.setProperty('--mx', (px * 100).toFixed(1) + '%');
+          el.style.setProperty('--my', (py * 100).toFixed(1) + '%');
+        });
+        el.addEventListener('pointerleave', function () {
+          el.style.setProperty('--rx', '0deg');
+          el.style.setProperty('--ry', '0deg');
+        });
+      }
+
+      attachTilt(phoneRig, 9);
+      tiltCards.forEach(function (card) {
+        attachTilt(card, 6);
+      });
+
+      /* ------------------------------------------------------------------ */
+      /* 5. Interactive Partner Access Form & Mailto Dispatch               */
+      /* ------------------------------------------------------------------ */
+      const catButtons = document.querySelectorAll('.cat-chip');
+      let selectedCategory = 'Talent / Model Agency';
+      let targetEmail = 'partnerships@kringapp.com';
+
+      catButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          catButtons.forEach(function (b) { b.classList.remove('is-selected'); });
+          btn.classList.add('is-selected');
+          selectedCategory = btn.getAttribute('data-cat') || 'Talent / Model Agency';
+          targetEmail = btn.getAttribute('data-target') || 'partnerships@kringapp.com';
+        });
+      });
+
+      const form = document.getElementById('partnerInviteForm');
+      const confirmBox = document.getElementById('inviteConfirmation');
+      const passCodeDisplay = document.getElementById('passCodeDisplay');
+      const passSummaryText = document.getElementById('passSummaryText');
+      const passMailtoLink = document.getElementById('passMailtoLink');
+
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          playCrystalBell();
+          const org = (document.getElementById('partnerOrg').value || 'Partner').trim();
+          const email = (document.getElementById('partnerEmail').value || '').trim();
+          const note = (document.getElementById('partnerNote').value || 'Bangkok & Pattaya').trim();
+          const code = 'KR-TH-' + Math.floor(1000 + Math.random() * 9000);
+
+          if (passCodeDisplay) passCodeDisplay.textContent = code;
+          if (passSummaryText) {
+            passSummaryText.innerHTML =
+              'Partner Pass <strong>' + code + '</strong> issued for <strong>' +
+              org.replace(/[<>&"]/g, '') + '</strong> (' + selectedCategory + '). Ready to dispatch to <strong>' + targetEmail + '</strong>.';
+          }
+
+          const subject = encodeURIComponent('[Kring Partner Pass ' + code + '] ' + selectedCategory + ' — ' + org);
+          const body = encodeURIComponent(
+            'Kring Partner Pass: ' + code + '\n' +
+            'Category: ' + selectedCategory + '\n' +
+            'Organization / Name: ' + org + '\n' +
+            'Contact Email: ' + email + '\n' +
+            'City / Note: ' + note + '\n\n' +
+            'Sent via kringapp.com Official Partner Portal (Bangkok & Pattaya, Thailand)'
+          );
+
+          if (passMailtoLink) {
+            passMailtoLink.href = 'mailto:' + targetEmail + '?subject=' + subject + '&body=' + body;
+          }
+          if (confirmBox) {
+            confirmBox.classList.add('is-visible');
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
